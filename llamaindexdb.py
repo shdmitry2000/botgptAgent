@@ -68,6 +68,7 @@ class LLamaindexdb(indexdb.baseindexdb):
 
         
     def getDefaultEmbadding(self): 
+        print(os.environ.get("OPENAI_API_KEY"))
         return OpenAIEmbeddings(
             openai_api_key=os.environ.get("OPENAI_API_KEY")
         )
@@ -131,7 +132,7 @@ class LLamaindexdb(indexdb.baseindexdb):
 
 
         # query = "how i can get to the moon?"
-        service_context = ServiceContext.from_defaults(llm_predictor=self.llm_predictor, prompt_helper=createPromptHelper())
+        service_context = ServiceContext.from_defaults(llm_predictor=self.llm_predictor, prompt_helper=self.createPromptHelper())
 
 
 
@@ -171,20 +172,20 @@ if __name__ == "__main__":
     
     
     
-    # cdb= LLamaindexdb()
-    # cdb.create_db(path=os.getcwd()+'/testdata/')
-    # print("LLamaindexdb",cdb.checkdb())
+    cdb= LLamaindexdb()
+    cdb.create_db(path=os.getcwd()+'/mashkanta/')
+    print("LLamaindexdb",cdb.checkdb())
 
     
     # query = "איך אני מגיע לירח"
     # cdb=Faissindexdb()
-    cdb=LLamaindexdb()
+    # cdb=LLamaindexdb()
     # answer=cdb.getDb().similarity_search(query)
-    query = "איך אני לוקח משכנתא?"
+    query = "מה היא משכנתא?"
     
     # print(cdb.getDb().as_retriever().retrieve(query))
     query_engine = cdb.getDb().as_query_engine()
-    response = query_engine.query("איך אני לוקח משקנתא?")
+    response = query_engine.query(query)
     print(response)
     
 

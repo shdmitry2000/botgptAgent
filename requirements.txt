@@ -179,3 +179,5 @@ ipywidgets
 pinecone-client
 plotly
 gptcache
+streamlit
+docx2txt

@@ -14,5 +14,7 @@ test.pdf
 /mashkanta
 /testdata
 .langchain.db
-
-
+bot_chatgpt copy.py
+conversational_old.py
+simple.pdf
+llama_db.old_mashkanta/
