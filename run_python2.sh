@@ -1,1 +1,1 @@
-python3 bot_chatgpt_agents.py
+python3 bot_chatgpt.py
