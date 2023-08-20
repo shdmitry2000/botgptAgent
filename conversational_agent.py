@@ -118,7 +118,7 @@ class conversatioalAgentsChatGPT():
         )
         
     def load_agent_chain(self,llm,tools,memory):
-        return  initialize_agent(tools=tools, llm=llm, agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)
+        return  initialize_agent(tools=tools, llm=llm, agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory,handle_parsing_errors=True)
 
     def load_agent_chain_w_planer(self,llm,tools,memory,planner_templait):
 
@@ -140,7 +140,9 @@ class conversatioalAgentsChatGPT():
 
         # system_message_prompt_content="You are a friendly, conversational banking assistant. Talk about your  data  and answer any questions.It's ok if you don't know the answer. Answer on the same language as question. Use search only if noone know answer. "
         #planner_template=""
-        llm = ChatOpenAI(temperature=0,model="gpt-3.5-turbo")
+        llm = ChatOpenAI(temperature=0,model='gpt-4-0613')
+                         #'gpt-3.5-turbo-0301')
+    
        
         agent_chain =self.load_agent_chain(llm,tools,memory)
         

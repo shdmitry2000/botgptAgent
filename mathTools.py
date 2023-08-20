@@ -51,7 +51,7 @@ from langchain.callbacks import get_openai_callback
 # We can do the same thing with a SQLite cache
 from langchain.cache import SQLiteCache
 from langchain.chat_models import ChatOpenAI
-from langchain.experimental.plan_and_execute import PlanAndExecute, load_agent_executor, load_chat_planner
+# from langchain.experimental.plan_and_execute import PlanAndExecute, load_agent_executor, load_chat_planner
 from langchain.llms import OpenAI
 from langchain import SerpAPIWrapper
 from langchain.agents.tools import Tool

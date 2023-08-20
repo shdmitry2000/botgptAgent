@@ -181,3 +181,7 @@ plotly
 gptcache
 streamlit
 docx2txt
+gradio
+llama_index
+langchain
+langchain-experimental==0.0.10
